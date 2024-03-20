@@ -1,0 +1,78 @@
+.nav-div{
+    background-color: var(--nav-color);
+    /* transition: all 0.5s ease-in-out; */
+    border-bottom: 0.005rem solid #a799996e;
+    position: fixed;
+    width: 100%;
+}
+/* 
+#nav.scrolled{
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+} */
+
+.nav-div ul{
+    font-size: 0.8rem;
+    font-weight: 300;
+    list-style: none;
+    display: flex; /* ADQUIRE CONFIGURAÇÃO PADRÃO LADO A LADO */
+}
+
+.nav-div ul li a{
+    text-decoration: none;
+    display: block; /* empurra */
+    /*ajustar a UL a partir do "a" */
+    /*por padrão é display:inline, não empurra conteiner para baixo  */ 
+    padding: 1rem;
+    position: relative;
+}
+
+.nav-div ul li a::after{ 
+    content: '';
+    position: absolute; /* relação com o navegador quando o elemento pai não tem position relative */
+    /* se o elemento pai receber position relative, a relação seria entre o pai e o filho, nao entre o navegador e o filho */
+    bottom: 1rem;
+    left: 20%; /*mover para alinhar abaixo do li */
+    width: 0; /* 100% seria uma barra completa */
+    height: 0.05rem;
+    background: crimson;
+    /*after é pseudo elemento :: é inline por padrão - usado para adicionar ou melhorar conteúdos 
+    --> */
+}
+
+.nav-div ul li a:hover::after{
+    width: 60%; /* 100% seria uma barra completa */
+    transition: all 300ms ease-in-out;
+}
+
+.nav-div ul li a:hover{
+    text-shadow: 0.05rem 0.05rem 0.05rem black;
+}
+
+.nav-div .nav-btn button{
+    padding: 0.5rem;
+    border: 0.05rem solid rgba(0, 0, 0, 0.404);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 500ms;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-div .nav-btn button:hover{
+    text-shadow: 0.02rem 0.02rem 0.05rem white;
+    border-color: crimson;
+    color: white;
+    transition: all 500ms ease;
+    background-color: crimson;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* eixo perpendicular */ 
+
+    /* margin-left: -10rem;
+    margin-right: -10rem;  */
+    /* diminuir a margin do *{margin: auto} */
+}
+

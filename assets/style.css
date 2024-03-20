@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Multani&display=swap');
+:root {
+    --nav-color: #d7d4e04b; /*VARIÁVEL NO CSS -> ROOT*/
+    --letter-color: #170d20ea;
+}
+
+*{  
+    scroll-behavior: smooth; /* NAO TA FUNCIONANDO ESSA BOSTA */
+    padding: 0;
+    margin: 0 auto; /* 0 top bottom, ou 10px left e right... */
+    /* se atentar ao auto em left e right */
+    box-sizing: border-box; /*nao permite que os elementos ultrapassem outros */
+    font-family: "Roboto";
+    color: var(--letter-color);
+}
+
+h1, h2, h3, h4 {font-family: "Montserrat";}
+h1 {font-size: 1rem; font-weight: 900;}
+h2 {font-size: 1.5rem; font-weight: 900; text-align: center;}
+
+p {font-family: "Noto Sans Multani"; text-align: justify;font-size: 0.8rem; line-height: 1.5rem; font-weight: 500;}
+
+body{
+    background-image: url("./img/wavey-fingerprint\ \(1\).svg");
+    background-position: center center; /* centraliza conforme a dimensão da página */
+}
+
+.content{
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* ou :repeat(2, 1fr)*/
+    flex-flow: column wrap; /*nowrap nao permite que a coluna se quebre*/
+    margin: 0 auto;
+    height: 100vh;
+    padding: 3.5rem;
+    /* obs: o padding pode receber a variavel "--gap: 30px"; --> var(--gap) */
+}
+
+@media (max-width: 1300px){
+    .content{
+        /* DISPLAY: BLOCK */
+        grid-template-columns: auto auto;
+        height: auto;
+    }
+}
+
+.first-section{
+    border: 2px solid rgba(220, 20, 60, 0.459);
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.first-section h2{
+    margin-top: 1rem;
+    /* position: relative;  */
+    /* position relative -> sai do lugar mas o lugar onde estava não é ocupado */
+    /* top: 1rem; */
+    /* margin-top: 1rem; */
+}
+
+.first-section p{
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.first-section a{
+    text-decoration: none;
+    transition: 500ms;
+}
+
+.first-section button{
+    display: flex;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--nav-color);
+    color: var(--letter-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.first-section button:hover{
+    background-color: crimson;
+    color: white;
+    transition: 0.5s;
+}
+.img-first-section img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto; /*conforme dimensão da tela*/
+    /* opacity: 0.5; */
+}
+
+/* ----------------------------------- */
